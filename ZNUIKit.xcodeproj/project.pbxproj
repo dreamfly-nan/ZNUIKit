@@ -46,6 +46,12 @@
 		39171AA824C871020096A307 /* UITextField+ZNTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 391718CE24C870FF0096A307 /* UITextField+ZNTextField.m */; };
 		39171B4F24C87A200096A307 /* ZNEncryptTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39171B4B24C87A200096A307 /* ZNEncryptTool.m */; };
 		39171B5024C87A200096A307 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 39171B4E24C87A200096A307 /* GTMBase64.m */; };
+		39277B5B24EEBCBA00A1AB1A /* ZNTableViewKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 39277B4624EEBCBA00A1AB1A /* ZNTableViewKit.m */; };
+		39277B5C24EEBCBA00A1AB1A /* ZNTableViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 39277B4E24EEBCBA00A1AB1A /* ZNTableViewHelper.m */; };
+		39277B5D24EEBCBA00A1AB1A /* ZNTableViewManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 39277B5124EEBCBA00A1AB1A /* ZNTableViewManage.m */; };
+		39277B5E24EEBCBA00A1AB1A /* ZNTableViewErrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 39277B5524EEBCBA00A1AB1A /* ZNTableViewErrow.m */; };
+		39277B5F24EEBCBA00A1AB1A /* ZNRegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39277B5624EEBCBA00A1AB1A /* ZNRegisterModel.m */; };
+		39277B6024EEBCBA00A1AB1A /* ZNTableViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 39277B5A24EEBCBA00A1AB1A /* ZNTableViewDataLoader.m */; };
 		39D1B02524D696DE00E0B774 /* ZNNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D1B01C24D696DE00E0B774 /* ZNNetManager.m */; };
 		39D1B02624D696DE00E0B774 /* ZNResponseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D1B02124D696DE00E0B774 /* ZNResponseMessage.m */; };
 		39D1B02724D696DE00E0B774 /* ZNFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D1B02224D696DE00E0B774 /* ZNFileModel.m */; };
@@ -140,6 +146,22 @@
 		39171B4C24C87A200096A307 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		39171B4D24C87A200096A307 /* ZNEncryptTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNEncryptTool.h; sourceTree = "<group>"; };
 		39171B4E24C87A200096A307 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		39277B4624EEBCBA00A1AB1A /* ZNTableViewKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNTableViewKit.m; sourceTree = "<group>"; };
+		39277B4824EEBCBA00A1AB1A /* ZNTableViewStrategyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewStrategyProtocol.h; sourceTree = "<group>"; };
+		39277B4924EEBCBA00A1AB1A /* ZNTableViewKitProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewKitProtocol.h; sourceTree = "<group>"; };
+		39277B4A24EEBCBA00A1AB1A /* ZNTableViewActionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewActionProtocol.h; sourceTree = "<group>"; };
+		39277B4B24EEBCBA00A1AB1A /* ZNTableViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewCellProtocol.h; sourceTree = "<group>"; };
+		39277B4D24EEBCBA00A1AB1A /* ZNTableViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewHelper.h; sourceTree = "<group>"; };
+		39277B4E24EEBCBA00A1AB1A /* ZNTableViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNTableViewHelper.m; sourceTree = "<group>"; };
+		39277B5024EEBCBA00A1AB1A /* ZNTableViewManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewManage.h; sourceTree = "<group>"; };
+		39277B5124EEBCBA00A1AB1A /* ZNTableViewManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNTableViewManage.m; sourceTree = "<group>"; };
+		39277B5324EEBCBA00A1AB1A /* ZNTableViewErrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewErrow.h; sourceTree = "<group>"; };
+		39277B5424EEBCBA00A1AB1A /* ZNRegisterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNRegisterModel.h; sourceTree = "<group>"; };
+		39277B5524EEBCBA00A1AB1A /* ZNTableViewErrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNTableViewErrow.m; sourceTree = "<group>"; };
+		39277B5624EEBCBA00A1AB1A /* ZNRegisterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNRegisterModel.m; sourceTree = "<group>"; };
+		39277B5724EEBCBA00A1AB1A /* ZNTableViewKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewKit.h; sourceTree = "<group>"; };
+		39277B5924EEBCBA00A1AB1A /* ZNTableViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewDataLoader.h; sourceTree = "<group>"; };
+		39277B5A24EEBCBA00A1AB1A /* ZNTableViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNTableViewDataLoader.m; sourceTree = "<group>"; };
 		39D1B01C24D696DE00E0B774 /* ZNNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNNetManager.m; sourceTree = "<group>"; };
 		39D1B01D24D696DE00E0B774 /* ZNNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNNetRequest.h; sourceTree = "<group>"; };
 		39D1B01F24D696DE00E0B774 /* ZNResponseMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNResponseMessage.h; sourceTree = "<group>"; };
@@ -201,7 +223,6 @@
 		3917185724C8703E0096A307 /* ZNUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				39E9F3F124CB3145007BF08E /* ZNMediator */,
 				3917187124C870890096A307 /* ZNUIKit */,
 				3917185824C8703E0096A307 /* AppDelegate.h */,
 				3917185924C8703E0096A307 /* AppDelegate.m */,
@@ -221,7 +242,7 @@
 		3917187124C870890096A307 /* ZNUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				39D1B01B24D696DE00E0B774 /* ZNNetWork */,
+				39277B4424EEBC7800A1AB1A /* Public */,
 				39171B4824C87A160096A307 /* Tool */,
 				3917187224C870FF0096A307 /* Category */,
 				391718CF24C870FF0096A307 /* Header */,
@@ -484,6 +505,79 @@
 			path = CrypTool;
 			sourceTree = "<group>";
 		};
+		39277B4424EEBC7800A1AB1A /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				39277B4524EEBCBA00A1AB1A /* ZNTableViewKit */,
+				39D1B01B24D696DE00E0B774 /* ZNNetWork */,
+				39E9F3F124CB3145007BF08E /* ZNMediator */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		39277B4524EEBCBA00A1AB1A /* ZNTableViewKit */ = {
+			isa = PBXGroup;
+			children = (
+				39277B4624EEBCBA00A1AB1A /* ZNTableViewKit.m */,
+				39277B4724EEBCBA00A1AB1A /* Protocol */,
+				39277B4C24EEBCBA00A1AB1A /* ViewHelper */,
+				39277B4F24EEBCBA00A1AB1A /* Manager */,
+				39277B5224EEBCBA00A1AB1A /* Model */,
+				39277B5724EEBCBA00A1AB1A /* ZNTableViewKit.h */,
+				39277B5824EEBCBA00A1AB1A /* DataLoader */,
+			);
+			path = ZNTableViewKit;
+			sourceTree = "<group>";
+		};
+		39277B4724EEBCBA00A1AB1A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				39277B4824EEBCBA00A1AB1A /* ZNTableViewStrategyProtocol.h */,
+				39277B4924EEBCBA00A1AB1A /* ZNTableViewKitProtocol.h */,
+				39277B4A24EEBCBA00A1AB1A /* ZNTableViewActionProtocol.h */,
+				39277B4B24EEBCBA00A1AB1A /* ZNTableViewCellProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		39277B4C24EEBCBA00A1AB1A /* ViewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				39277B4D24EEBCBA00A1AB1A /* ZNTableViewHelper.h */,
+				39277B4E24EEBCBA00A1AB1A /* ZNTableViewHelper.m */,
+			);
+			path = ViewHelper;
+			sourceTree = "<group>";
+		};
+		39277B4F24EEBCBA00A1AB1A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				39277B5024EEBCBA00A1AB1A /* ZNTableViewManage.h */,
+				39277B5124EEBCBA00A1AB1A /* ZNTableViewManage.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		39277B5224EEBCBA00A1AB1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39277B5324EEBCBA00A1AB1A /* ZNTableViewErrow.h */,
+				39277B5424EEBCBA00A1AB1A /* ZNRegisterModel.h */,
+				39277B5524EEBCBA00A1AB1A /* ZNTableViewErrow.m */,
+				39277B5624EEBCBA00A1AB1A /* ZNRegisterModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		39277B5824EEBCBA00A1AB1A /* DataLoader */ = {
+			isa = PBXGroup;
+			children = (
+				39277B5924EEBCBA00A1AB1A /* ZNTableViewDataLoader.h */,
+				39277B5A24EEBCBA00A1AB1A /* ZNTableViewDataLoader.m */,
+			);
+			path = DataLoader;
+			sourceTree = "<group>";
+		};
 		39D1B01B24D696DE00E0B774 /* ZNNetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -643,10 +737,13 @@
 				39171A9224C871020096A307 /* NSString+ZNString.m in Sources */,
 				39171A8724C871020096A307 /* UIImage+ZNImage.m in Sources */,
 				39D1B02524D696DE00E0B774 /* ZNNetManager.m in Sources */,
+				39277B5D24EEBCBA00A1AB1A /* ZNTableViewManage.m in Sources */,
+				39277B5E24EEBCBA00A1AB1A /* ZNTableViewErrow.m in Sources */,
 				39E9F3EC24CB2E12007BF08E /* UIImage+ZNZoom.m in Sources */,
 				39171AA324C871020096A307 /* UIViewController+ZNViewController.m in Sources */,
 				39171A8F24C871020096A307 /* NSString+ZNDate.m in Sources */,
 				39171A8824C871020096A307 /* UIImage+ZNCreate.m in Sources */,
+				39277B5F24EEBCBA00A1AB1A /* ZNRegisterModel.m in Sources */,
 				39171A9D24C871020096A307 /* UIView+ZNView.m in Sources */,
 				39171A9F24C871020096A307 /* UITextView+ZNUITextView.m in Sources */,
 				39171A8A24C871020096A307 /* NSDateComponents+ZNDateComponents.m in Sources */,
@@ -661,6 +758,8 @@
 				39171A9024C871020096A307 /* NSString+ZNCryp.m in Sources */,
 				39D1B02824D696DE00E0B774 /* ZNNetRequest.m in Sources */,
 				39171A8B24C871020096A307 /* NSMutableAttributedString+ZNMutableAttributeString.m in Sources */,
+				39277B5C24EEBCBA00A1AB1A /* ZNTableViewHelper.m in Sources */,
+				39277B5B24EEBCBA00A1AB1A /* ZNTableViewKit.m in Sources */,
 				39171A9324C871020096A307 /* NSObject+ZNSql.m in Sources */,
 				39171A9B24C871020096A307 /* UIButton+ZNButton.m in Sources */,
 				39E9F3F524CB3145007BF08E /* ZNMediator.m in Sources */,
@@ -680,6 +779,7 @@
 				39171A8D24C871020096A307 /* NSData+ZNBase64.m in Sources */,
 				39171AA424C871020096A307 /* UITableView+ZNCreate.m in Sources */,
 				39171A8E24C871020096A307 /* NSURL+ZNURL.m in Sources */,
+				39277B6024EEBCBA00A1AB1A /* ZNTableViewDataLoader.m in Sources */,
 				39E9F3EF24CB302E007BF08E /* UIImage+ZNCut.m in Sources */,
 				39171A8924C871020096A307 /* UIImage+ZNTool.m in Sources */,
 			);
