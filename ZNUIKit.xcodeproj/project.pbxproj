@@ -52,6 +52,8 @@
 		39277B5E24EEBCBA00A1AB1A /* ZNTableViewErrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 39277B5524EEBCBA00A1AB1A /* ZNTableViewErrow.m */; };
 		39277B5F24EEBCBA00A1AB1A /* ZNRegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39277B5624EEBCBA00A1AB1A /* ZNRegisterModel.m */; };
 		39277B6024EEBCBA00A1AB1A /* ZNTableViewDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 39277B5A24EEBCBA00A1AB1A /* ZNTableViewDataLoader.m */; };
+		398EB57624F2163600BF1788 /* DemoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 398EB57524F2163600BF1788 /* DemoTableViewCell.m */; };
+		398EB57A24F216DE00BF1788 /* DemoTableViewAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 398EB57924F216DE00BF1788 /* DemoTableViewAction.m */; };
 		39D1B02524D696DE00E0B774 /* ZNNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D1B01C24D696DE00E0B774 /* ZNNetManager.m */; };
 		39D1B02624D696DE00E0B774 /* ZNResponseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D1B02124D696DE00E0B774 /* ZNResponseMessage.m */; };
 		39D1B02724D696DE00E0B774 /* ZNFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D1B02224D696DE00E0B774 /* ZNFileModel.m */; };
@@ -162,6 +164,10 @@
 		39277B5724EEBCBA00A1AB1A /* ZNTableViewKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewKit.h; sourceTree = "<group>"; };
 		39277B5924EEBCBA00A1AB1A /* ZNTableViewDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNTableViewDataLoader.h; sourceTree = "<group>"; };
 		39277B5A24EEBCBA00A1AB1A /* ZNTableViewDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNTableViewDataLoader.m; sourceTree = "<group>"; };
+		398EB57424F2163600BF1788 /* DemoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTableViewCell.h; sourceTree = "<group>"; };
+		398EB57524F2163600BF1788 /* DemoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewCell.m; sourceTree = "<group>"; };
+		398EB57824F216DE00BF1788 /* DemoTableViewAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTableViewAction.h; sourceTree = "<group>"; };
+		398EB57924F216DE00BF1788 /* DemoTableViewAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewAction.m; sourceTree = "<group>"; };
 		39D1B01C24D696DE00E0B774 /* ZNNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNNetManager.m; sourceTree = "<group>"; };
 		39D1B01D24D696DE00E0B774 /* ZNNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNNetRequest.h; sourceTree = "<group>"; };
 		39D1B01F24D696DE00E0B774 /* ZNResponseMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNResponseMessage.h; sourceTree = "<group>"; };
@@ -223,13 +229,12 @@
 		3917185724C8703E0096A307 /* ZNUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				39523C9F24F214D00005A4BE /* Demo */,
 				3917187124C870890096A307 /* ZNUIKit */,
 				3917185824C8703E0096A307 /* AppDelegate.h */,
 				3917185924C8703E0096A307 /* AppDelegate.m */,
 				3917185B24C8703E0096A307 /* SceneDelegate.h */,
 				3917185C24C8703E0096A307 /* SceneDelegate.m */,
-				3917185E24C8703E0096A307 /* ViewController.h */,
-				3917185F24C8703E0096A307 /* ViewController.m */,
 				3917186124C8703E0096A307 /* Main.storyboard */,
 				3917186424C870400096A307 /* Assets.xcassets */,
 				3917186624C870400096A307 /* LaunchScreen.storyboard */,
@@ -578,6 +583,35 @@
 			path = DataLoader;
 			sourceTree = "<group>";
 		};
+		39523C9F24F214D00005A4BE /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				398EB57724F216BB00BF1788 /* Action */,
+				398EB57324F2161300BF1788 /* VIew */,
+				3917185E24C8703E0096A307 /* ViewController.h */,
+				3917185F24C8703E0096A307 /* ViewController.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		398EB57324F2161300BF1788 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				398EB57424F2163600BF1788 /* DemoTableViewCell.h */,
+				398EB57524F2163600BF1788 /* DemoTableViewCell.m */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		398EB57724F216BB00BF1788 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				398EB57824F216DE00BF1788 /* DemoTableViewAction.h */,
+				398EB57924F216DE00BF1788 /* DemoTableViewAction.m */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
 		39D1B01B24D696DE00E0B774 /* ZNNetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -735,6 +769,7 @@
 			files = (
 				39171A9C24C871020096A307 /* UIView+ZNCreate.m in Sources */,
 				39171A9224C871020096A307 /* NSString+ZNString.m in Sources */,
+				398EB57624F2163600BF1788 /* DemoTableViewCell.m in Sources */,
 				39171A8724C871020096A307 /* UIImage+ZNImage.m in Sources */,
 				39D1B02524D696DE00E0B774 /* ZNNetManager.m in Sources */,
 				39277B5D24EEBCBA00A1AB1A /* ZNTableViewManage.m in Sources */,
@@ -742,6 +777,7 @@
 				39E9F3EC24CB2E12007BF08E /* UIImage+ZNZoom.m in Sources */,
 				39171AA324C871020096A307 /* UIViewController+ZNViewController.m in Sources */,
 				39171A8F24C871020096A307 /* NSString+ZNDate.m in Sources */,
+				398EB57A24F216DE00BF1788 /* DemoTableViewAction.m in Sources */,
 				39171A8824C871020096A307 /* UIImage+ZNCreate.m in Sources */,
 				39277B5F24EEBCBA00A1AB1A /* ZNRegisterModel.m in Sources */,
 				39171A9D24C871020096A307 /* UIView+ZNView.m in Sources */,
