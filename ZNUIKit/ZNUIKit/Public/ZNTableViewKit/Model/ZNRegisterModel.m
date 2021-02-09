@@ -30,6 +30,16 @@
     return model;
 }
 
+/// 注册cell
+/// @param cellClass <#cellClass description#>
+/// @param height <#height description#>
++ (instancetype)initWithCellClass:(Class) cellClass
+                           height:(CGFloat) height{
+    ZNRegisterModel * model = [ZNRegisterModel initWithCellClass:cellClass];
+    model.height = height;
+    return model;
+}
+
 /// 注册cell，并且注册cell对应的model对象
 /// @param cellClass <#cellClass description#>
 /// @param modelName <#modelName description#>
@@ -38,6 +48,19 @@
     ZNRegisterModel * model = [ZNRegisterModel new];
     model.cellClass = cellClass;
     model.modelName = modelName;
+    return model;
+}
+
+
+/// 注册cell，并且注册cell对应的model对象
+/// @param cellClass <#cellClass description#>
+/// @param modelName <#modelName description#>
+/// @param height <#height description#>
++ (instancetype)initWithCellClass:(Class)cellClass
+                        modelName:(NSString*) modelName
+                           height:(CGFloat) height{
+    ZNRegisterModel * model = [ZNRegisterModel initWithCellClass:cellClass modelName:modelName];
+    model.height = height;
     return model;
 }
 

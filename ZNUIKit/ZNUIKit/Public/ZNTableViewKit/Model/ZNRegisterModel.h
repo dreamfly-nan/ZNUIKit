@@ -25,11 +25,27 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param cellClass <#cellClass description#>
 + (instancetype)initWithCellClass:(Class) cellClass;
 
+
+/// 注册cell
+/// @param cellClass <#cellClass description#>
+/// @param height <#height description#>
++ (instancetype)initWithCellClass:(Class) cellClass
+                           height:(CGFloat) height;
+
 /// 注册cell，并且注册cell对应的model对象
 /// @param cellClass <#cellClass description#>
 /// @param modelName <#modelName description#>
 + (instancetype)initWithCellClass:(Class)cellClass
                         modelName:(NSString*) modelName;
+
+
+/// 注册cell，并且注册cell对应的model对象
+/// @param cellClass <#cellClass description#>
+/// @param modelName <#modelName description#>
+/// @param height <#height description#>
++ (instancetype)initWithCellClass:(Class)cellClass
+                        modelName:(NSString*) modelName
+                           height:(CGFloat) height;
 
 + (NSArray *)initWithArrayCellClass:(NSArray<Class> *) arrayClass;
 
