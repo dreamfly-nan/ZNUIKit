@@ -14,7 +14,7 @@
 #pragma mark -ZNTableViewManageProtocol
 
 /// 根据indexPath返回UITableViewCell
-/// 
+///
 /// @param indexPath <#indexPath description#>
 - (Class)managerCellClassWithIndexPath:(NSIndexPath *) indexPath{
     if (self.dataLoader && [self.dataLoader respondsToSelector:@selector(obtianObjectWithIndexPath:)]) {
@@ -25,9 +25,17 @@
     
     ///获取第一个注册的cell，排除组件自己注册的cell
     if (self.registerCellModels.count) {
+        NSObject * cellModel = [self.dataLoader obtianObjectWithIndexPath:indexPath];
         for (ZNRegisterModel * model in self.registerCellModels.allValues) {
-            if (![model.class isKindOfClass:[UITableViewCell class]]) {
-                return model.cellClass;
+            ///如果使用者自定义了对应类型，则使用自定义的类型
+            if (model.modelName) {
+                if ([model.modelName isEqualToString:NSStringFromClass(cellModel.class)]) {
+                    return model.cellClass;
+                }
+            }else{
+                if (![model.class isKindOfClass:[UITableViewCell class]]) {
+                    return model.cellClass;
+                }
             }
         }
     }
@@ -80,10 +88,6 @@
 /// @param cell <#cell description#>
 /// @param indexPath <#indexPath description#>
 - (void)managerWillDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.viewHelper && [self.viewHelper respondsToSelector:@selector(willDisplayWithTableViewCell:indexPath:)]) {
-        [self.viewHelper willDisplayWithTableViewCell:cell indexPath:indexPath];
-    }
-    
     UITableViewCell<ZNBaseTableViewCellProtocol> * baseCell = (UITableViewCell<ZNBaseTableViewCellProtocol> *)cell;
     if (baseCell && [baseCell respondsToSelector:@selector(loadModel:withIndexPath:)]) {
         id model = nil;
@@ -92,6 +96,22 @@
         }
         [baseCell loadModel:model withIndexPath:indexPath];
     }
+    
+    if (baseCell && [baseCell respondsToSelector:@selector(isHeaderOrFooter:isFooter:)]) {
+        BOOL isHeader = NO;
+        BOOL isFooter = NO;
+        if ([self.dataLoader respondsToSelector:@selector(isHeaderWithIndexPath:)]) {
+            isHeader = [self.dataLoader isHeaderWithIndexPath:indexPath];
+        }
+        if ([self.dataLoader respondsToSelector:@selector(isFooterWithIndexPath:)]) {
+            isFooter = [self.dataLoader isFooterWithIndexPath:indexPath];
+        }
+        [baseCell isHeaderOrFooter:isHeader isFooter:isFooter];
+    }
+    
+    if (self.viewHelper && [self.viewHelper respondsToSelector:@selector(willDisplayWithTableViewCell:indexPath:)]) {
+        [self.viewHelper willDisplayWithTableViewCell:cell indexPath:indexPath];
+    }
 }
 
 /// 组数
@@ -99,9 +119,14 @@
 - (NSInteger)managerNumberOfSectionsInTableView:(UITableView *)tableView{
     if (self.dataLoader && [self.dataLoader respondsToSelector:@selector(haveData)]) {
         if ([self.dataLoader haveData]) {
+            self.emptyView.hidden = YES;
+            self.footerRefresh.hidden = NO;
             if ([self.dataLoader respondsToSelector:@selector(numberOfSection)]) {
                 return [self.dataLoader numberOfSection];
             }
+        }else{
+            self.emptyView.hidden = NO;
+            self.footerRefresh.hidden = YES;
         }
     }
     return 0;
@@ -119,8 +144,14 @@
 /// <#Description#>
 /// @param section <#section description#>
 - (UIView *)managerViewHeaderInSection:(NSInteger)section{
-    if (self.viewHelper && [self.viewHelper respondsToSelector:@selector(headerViewForSection:)]) {
-        return [self.viewHelper headViewWithSection:section];
+    if (self.viewHelper && [self.viewHelper respondsToSelector:@selector(headViewWithSection:)]) {
+        UIView<ZNBaseViewProtocol> * headView = [self.viewHelper headViewWithSection:section];
+        if (headView && [headView respondsToSelector:@selector(setSubViewAction:)]) {
+            [headView setSubViewAction:self.cellAction];
+        }
+        if (headView) {
+            return headView;
+        }
     }
     return [UIView new];
 }
@@ -138,7 +169,13 @@
 /// @param section <#section description#>
 - (UIView *)managerViewForFooterInSection:(NSInteger)section{
     if (self.viewHelper && [self.viewHelper respondsToSelector:@selector(footerViewWithSection:)]) {
-        return [self.viewHelper footerViewWithSection:section];
+        UIView<ZNBaseViewProtocol> * footerView = [self.viewHelper footerViewWithSection:section];
+        if (footerView && [footerView respondsToSelector:@selector(setSubViewAction:)]) {
+            [footerView setSubViewAction:self.cellAction];
+        }
+        if (footerView) {
+            return footerView;
+        }
     }
     return [UIView new];
 }
@@ -162,17 +199,18 @@
     }
     
     if (self.dataLoader && [self.dataLoader respondsToSelector:@selector(setDataSourceWithArray:)]) {
-         NSArray * array = [self.dataLoader obtainDataSource];
+         id array = [self.dataLoader obtainDataSource];
         ///筛选数据
         if ([strategy respondsToSelector:@selector(strategyFilterWtihArray:)]) {
             array = [strategy strategyFilterWtihArray:array];
         }
         ///刷新数据源
         if ([strategy respondsToSelector:@selector(strategyUpdateWithArray:)]) {
-            [strategy strategyUpdateWithArray:array];
+            array = [strategy strategyUpdateWithArray:array];
         }
         [self.dataLoader setDataSourceWithArray:array];
     }
 }
+
 
 @end

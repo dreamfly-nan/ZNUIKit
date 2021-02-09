@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ZNTableViewCellProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -53,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 组头
 /// @param section <#section description#>
-- (UIView *)headViewWithSection:(NSInteger) section;
+- (UIView<ZNBaseViewProtocol> * __nullable)headViewWithSection:(NSInteger) section;
 
 /// 组尾的高度
 /// @param section <#section description#>
@@ -61,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 组尾
 /// @param section <#section description#>
-- (UIView *)footerViewWithSection:(NSInteger) section;
+- (UIView<ZNBaseViewProtocol> * __nullable)footerViewWithSection:(NSInteger) section;
 
 @end
 

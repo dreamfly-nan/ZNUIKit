@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MJRefresh/MJRefresh.h>
 #import "ZNTableViewDataLoader.h"
 #import "ZNTableViewHelper.h"
 #import "ZNTableViewActionProtocol.h"
@@ -74,14 +75,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic , strong) UITableView * tableView;
 
+///空视图
+@property(nonatomic , strong) UIView * emptyView;
+
+//错误视图
+@property(nonatomic , strong) UIView * errorView;
+
+///加载图
+@property(nonatomic , strong) UIView * loadView;
+
 @property(nonatomic , weak) id<ZNTableViewLayoutProtocol,ZNTableViewLunchProtocol> viewHelper;
 
-@property(nonatomic , weak) id<ZNTableViewDataSourceDelegate> dataLoader;
+@property(nonatomic , weak) id<ZNTableViewDataSourceProtocol> dataLoader;
 
 @property(nonatomic , weak) id<ZNTableViewActionProtocol> cellAction;
 
 /// cell的注册数据模型
 @property(nonatomic , strong) NSMutableDictionary<NSString *, ZNRegisterModel *> * registerCellModels;
+
+@property(nonatomic , strong) MJRefreshHeader * headRefresh;
+
+@property(nonatomic , strong) MJRefreshFooter * footerRefresh;
 
 @end
 

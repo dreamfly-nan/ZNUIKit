@@ -41,7 +41,18 @@ typedef NS_ENUM(NSInteger,ZNTableViewDataType){
 
 - (BOOL)haveData {
     if (self.datasoure.count > 0) {
-        return YES;
+        if (self.dataType == ZNTableViewDataTypeSingleGroup) {
+            return  YES;
+        }
+        for (id model in self.datasoure) {
+            if ([model isKindOfClass:[NSArray class]] || [model isKindOfClass:[NSMutableArray class]]) {
+                NSArray * array = model;
+                if (array.count > 0) {
+                    return YES;
+                }
+            }
+        }
+        return NO;
     }
     return NO;
 }
@@ -90,7 +101,7 @@ typedef NS_ENUM(NSInteger,ZNTableViewDataType){
         }
     }else if(self.dataType == ZNTableViewDataTypeMoreGroup){
         if (self.datasoure.count > indexPath.section) {
-            id model = self.datasoure[indexPath.row];
+            id model = self.datasoure[indexPath.section];
             if ([model isKindOfClass:[NSArray class]] || [model isKindOfClass:[NSMutableArray class]]) {
                 NSArray * array = model;
                 return array[indexPath.row];
@@ -106,13 +117,49 @@ typedef NS_ENUM(NSInteger,ZNTableViewDataType){
 
 /// 重设数据源
 /// @param array <#array description#>
-- (void)setDataSourceWithArray:(NSArray *) array{
+- (void)setDataSourceWithArray:(id) array{
     self.datasoure = array;
 }
 
 /// 获取数据源
-- (NSArray *) obtainDataSource{
+- (id) obtainDataSource{
     return self.datasoure;
 }
 
+/// 是否是下拉刷新数据
+/// @param isReSetData <#isReSetData description#>
+- (void)loadData:(BOOL) isReSetData{
+    //默认为最后一页
+    self.loadFinishBlock(nil, true);
+}
+
+/// 是否是头部
+/// @param indexPath <#indexPath description#>
+- (BOOL)isHeaderWithIndexPath:(NSIndexPath *) indexPath{
+    if (self.dataType == ZNTableViewDataTypeSingleGroup) {
+        if (indexPath.row == 0) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+/// 是否是尾部
+/// @param indexPath <#indexPath description#>
+- (BOOL)isFooterWithIndexPath:(NSIndexPath *) indexPath{
+    if (self.dataType == ZNTableViewDataTypeSingleGroup) {
+        if (indexPath.row == (self.datasoure.count - 1)) {
+            return YES;
+        }
+    }else{
+        NSObject * object = self.datasoure[indexPath.section];
+        if ([object isKindOfClass:[NSArray class]]) {
+            NSArray * array = object;
+            if ((array.count - 1) == indexPath.row) {
+                return YES;
+            }
+        }
+    }
+    return NO;
+}
 @end

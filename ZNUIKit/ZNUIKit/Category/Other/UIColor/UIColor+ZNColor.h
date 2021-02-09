@@ -28,6 +28,6 @@
 /// @param startColor 起始色
 /// @param endColor 结束色
 /// @param percent 渐变比率
-+(UIColor *) createGradualColorByStartColor:(UIColor *) startColor EndColor:(UIColor *) endColor offSetPercent:(CGFloat) percent;
+//+(UIColor *) createGradualColorByStartColor:(UIColor *) startColor EndColor:(UIColor *) endColor offSetPercent:(CGFloat) percent;
 
 @end

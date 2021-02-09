@@ -18,7 +18,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@protocol ZNTableViewKitDelegate <NSObject>
+
+@optional
+/// 网络请求数据加载完成
+- (void)loadDataFinish;
+
+@end
+
 @interface ZNTableViewKit : NSObject <ZNTableViewKitProtocol>
+
+@property(nonatomic , weak) id<ZNTableViewKitDelegate> ZNDelegate;
 
 /// 只传入数据源与tableView
 /// @param tableView <#tableView description#>
@@ -38,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param tableView <#tableView description#>
 - (instancetype)initWithViewHelper:(id<ZNTableViewLayoutProtocol,
                                     ZNTableViewLunchProtocol> ) viewHelper
-                        dataLoader:(id<ZNTableViewDataSourceDelegate>) dataLoader
+                        dataLoader:(id<ZNTableViewDataSourceProtocol>) dataLoader
                          tableView:(UITableView *) tableView;
 
 /// 当前tableview的处理对象
@@ -63,6 +74,27 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param action <#action description#>
 - (void)addAction:(id<ZNTableViewActionProtocol>) action;
 
+/// 空视图接入
+/// @param emptyView <#emptyView description#>=
+- (void)setEmptyView:(UIView*) emptyView;
+
+/// 错误视图接入
+/// @param errorView <#errorView description#>
+- (void)setErrorView:(UIView *) errorView;
+
+/// 加载图接入
+/// @param loadView <#loadView description#>
+- (void)setLoadView:(UIView *) loadView;
+
+/// 注册头部
+/// @param header <#header description#>
+- (void)registerRefreshHead:(MJRefreshHeader *) header;
+
+/// 注册尾部
+/// @param footer <#footer description#>
+- (void)registerRefreshFoot:(MJRefreshFooter *) footer;
+
+- (void)loadData:(BOOL) isReSetData;
 @end
 
 NS_ASSUME_NONNULL_END

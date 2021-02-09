@@ -523,12 +523,12 @@
 		39277B4524EEBCBA00A1AB1A /* ZNTableViewKit */ = {
 			isa = PBXGroup;
 			children = (
+				39277B5724EEBCBA00A1AB1A /* ZNTableViewKit.h */,
 				39277B4624EEBCBA00A1AB1A /* ZNTableViewKit.m */,
 				39277B4724EEBCBA00A1AB1A /* Protocol */,
 				39277B4C24EEBCBA00A1AB1A /* ViewHelper */,
 				39277B4F24EEBCBA00A1AB1A /* Manager */,
 				39277B5224EEBCBA00A1AB1A /* Model */,
-				39277B5724EEBCBA00A1AB1A /* ZNTableViewKit.h */,
 				39277B5824EEBCBA00A1AB1A /* DataLoader */,
 			);
 			path = ZNTableViewKit;

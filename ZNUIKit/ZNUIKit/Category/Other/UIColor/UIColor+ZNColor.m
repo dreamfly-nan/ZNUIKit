@@ -7,7 +7,6 @@
 //
 
 #import "UIColor+ZNColor.h"
-#import <YYKit/YYKit.h>
 
 @implementation UIColor (ZNColor)
 
@@ -75,14 +74,14 @@
     }
 }
 
-+(UIColor *) createGradualColorByStartColor:(UIColor *) startColor EndColor:(UIColor *) endColor offSetPercent:(CGFloat) percent {
-
-    CGFloat red = [self interpolationFrom:startColor.red to:endColor.red percent:percent];
-    CGFloat green = [self interpolationFrom:startColor.green to:endColor.green percent:percent];
-    CGFloat blue = [self interpolationFrom:startColor.blue to:endColor.blue percent:percent];
-    CGFloat alpha = [self interpolationFrom:startColor.alpha to:endColor.alpha percent:percent];
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-}
+//+(UIColor *) createGradualColorByStartColor:(UIColor *) startColor EndColor:(UIColor *) endColor offSetPercent:(CGFloat) percent {
+//
+//    CGFloat red = [self interpolationFrom:startColor.red to:endColor.red percent:percent];
+//    CGFloat green = [self interpolationFrom:startColor.green to:endColor.green percent:percent];
+//    CGFloat blue = [self interpolationFrom:startColor.blue to:endColor.blue percent:percent];
+//    CGFloat alpha = [self interpolationFrom:startColor.alpha to:endColor.alpha percent:percent];
+//    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+//}
 
 + (CGFloat)interpolationFrom:(CGFloat)from to:(CGFloat)to percent:(CGFloat)percent
 {

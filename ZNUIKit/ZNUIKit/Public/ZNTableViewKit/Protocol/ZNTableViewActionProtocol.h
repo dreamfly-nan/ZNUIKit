@@ -33,6 +33,23 @@
                              cell:(UITableViewCell *) cell
                             model:(id) model;
 
+/// 组头视图的点击事件
+/// @param code <#code description#>
+/// @param headerView <#headView description#>
+/// @param model <#model description#>
+- (void)headerViewActionWithCode:(NSString *) code
+                      headerView:(UIView*) headerView
+                           model:(id) model;
+
+/// 组尾视图的点击事件
+/// @param code <#code description#>
+/// @param footerView <#headView description#>
+/// @param model <#model description#>
+- (void)footerViewActionWithCode:(NSString *) code
+                      footerView:(UIView*) footerView
+                           model:(id) model;
+
+
 @end
 
 #endif /* ZNTableViewActionProtocol_h */
